@@ -10,12 +10,17 @@ Note: This was tested on Zabbix server 4.0.17
 
 # How to install it
 1. Download all files on this repository;
-2. Access the host with Zabbix agent installed to set the config files;
+2. Access the host with Zabbix agent to set the config files;
 3. Copy the file "ds_ssl_check.conf" to "/etc/zabbix/zabbix_agentd.d/";
 4. Copy the files "ds_ssl_expiration.sh" and "ds_ssl_is_valid.sh" to "/etc/zabbix/zabbix_agentd.d/scripts/";
 2. At the Zabbix admin, go to "Configuration >> Templates" and import the template file "ds_ssl_template.xml";
 
 Finally, restart the zabbix agent service to apply the new config!
+
+# To try manully
+zabbix_get -s agent-hostname -k ds_ssl.ping<br>
+zabbix_get -s agent-hostname -k ds_ssl.expire[google.com]<br>
+zabbix_get -s agent-hostname -k ds_ssl.valid[google.com]
 
 Example of return:
 <table><thead><tr>
@@ -32,4 +37,4 @@ Example of return:
 <tr><td>Check SSL is valid</td>
 <td>02/29/2020 05:55:22 PM</td>
 <td style="text-align: center;">1</td>
-  </tr></tbody></table>
+</tr></tbody></table>
