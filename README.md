@@ -13,7 +13,8 @@ Note: This was tested on Zabbix server 4.0.17
 2. Access the host with Zabbix agent to set the config files;
 3. Copy the file "ds_ssl_check.conf" to "/etc/zabbix/zabbix_agentd.d/";
 4. Copy the files "ds_ssl_expiration.sh" and "ds_ssl_is_valid.sh" to "/etc/zabbix/zabbix_agentd.d/scripts/";
-2. At the Zabbix admin, go to "Configuration >> Templates" and import the template file "ds_ssl_template.xml";
+5. At the Zabbix admin, go to "Configuration >> Templates" and import the template file "ds_ssl_template.xml";
+6. After add this template to some host, you will see the macro called "{$URL}" where you can set a domain name to check (like google.com).
 
 Finally, restart the <strong>zabbix agent service</strong> to apply the new config!
 
