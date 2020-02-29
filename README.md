@@ -1,12 +1,19 @@
 # ds-zabbix-ssl-check
 A little Zabbix template to monitor SSL certificate over an HTTPS URL
 
-This plugins has three commands:
-1. ds_ssl.expire[$myurl] - Check an URL and return how many days its SSL will expire (it returns zero if is is expired); 
-2. ds_ssl.valid[$myurl] - Check an URL and return how 1 if it is ok or 0 if it is not valid;
-3. ds_ssl.ping - Just an way to check connectivy to agent.
+# Features
+This plugins has three commands:<br>
+<strong>ds_ssl.expire[$myurl]</strong> - Check an URL and return 'how many days' its SSL will expire (it returns '0' if is is expired);<br> 
+<strong>ds_ssl.valid[$myurl]</strong> - Check an URL and return '1' if it is ok or '0' if it is not valid;<br>
+<strong>ds_ssl.ping</strong> - Just an way to check connectivy to agent.
+Note: This was tested on Zabbix server 4.0.17
 
-# How to use it
+# How to install it
+1. Download all files on this repository;
+2. Access the host with Zabbix agent installed to set the config files;
+3. Copy the file "ds_ssl_check.conf" to "/etc/zabbix/zabbix_agentd.d/";
+4. Copy the files "ds_ssl_expiration.sh" and "ds_ssl_is_valid.sh" to "/etc/zabbix/zabbix_agentd.d/scripts/";
+2. At the Zabbix admin, go to "Configuration >> Templates" and import the template file "ds_ssl_template.xml";
 
 Finally, restart the zabbix agent service to apply the new config!
 
