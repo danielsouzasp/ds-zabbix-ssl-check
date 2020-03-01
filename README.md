@@ -9,7 +9,7 @@ This plugin has three commands:<br>
 Note: This was tested on Zabbix server 4.0.17
 
 # How to install it
-1. Download all files on this repository;
+1. Download all files of this repository;
 2. Access the host with Zabbix agent to set the config files;
 3. Copy the file "ds_ssl_check.conf" to "/etc/zabbix/zabbix_agentd.d/";
 4. Copy the files "ds_ssl_expiration.sh" and "ds_ssl_is_valid.sh" to "/etc/zabbix/zabbix_agentd.d/scripts/";
@@ -18,7 +18,7 @@ Note: This was tested on Zabbix server 4.0.17
 
 Finally, restart the <strong>zabbix agent service</strong> to apply the new config!
 
-# To try manually
+# To try manually from Zabbix server
 zabbix_get -s agent-hostname -k ds_ssl.ping<br>
 zabbix_get -s agent-hostname -k ds_ssl.expire[google.com]<br>
 zabbix_get -s agent-hostname -k ds_ssl.valid[google.com]
