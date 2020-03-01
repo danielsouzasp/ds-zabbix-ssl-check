@@ -4,9 +4,9 @@ A little Zabbix template to monitor SSL certificate over an HTTPS URL
 # Features
 This plugin has three commands:<br>
 <strong>ds_ssl.expire[$myurl]</strong> - Check an URL and return 'how many days' its SSL will expire (it returns '0' if expired);<br> 
-<strong>ds_ssl.valid[$myurl]</strong> - Check an URL and return '1' if it is ok or '0' if it is not valid;<br>
-<strong>ds_ssl.ping</strong> - Just an way to check connectivy to agent.
-Note: This was tested on Zabbix server 4.0.17
+<strong>ds_ssl.valid[$myurl]</strong> - Check an URL and return '1' if its SSL is ok or '0' if it's not valid;<br>
+<strong>ds_ssl.ping</strong> - Just an way to check connectivy to agent.<br>
+Note: This was tested with Zabbix server 4.0.17
 
 # How to install it
 1. Download all files of this repository;
