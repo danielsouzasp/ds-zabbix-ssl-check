@@ -14,7 +14,7 @@ URL=$1
 VALUE=0
 
 #Getting the URL's SSL return code withtou spaces (example of return: "   Verify return code: 0 (ok)")
-RETURN_CODE="$(echo | openssl s_client -showcerts -connect $URL:443 2>/dev/null | grep Verify | sed  s'/ //g')"
+RETURN_CODE="$(echo | openssl s_client -showcerts -connect $URL:443 -servername $URL 2>/dev/null | grep Verify | sed  s'/ //g')"
 
 if [ "$RETURN_CODE" = "Verifyreturncode:0(ok)" ] ; then
     VALUE=1
