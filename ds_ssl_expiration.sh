@@ -18,7 +18,7 @@ VALUE=0
 CURRENT_DATE_IN_SEC="$(date +%s)"
 
 #Getting the URL's SSL cert expiration date 
-EXP_DATE="$(echo | openssl s_client -connect $URL:443 2>/dev/null | openssl x509 -noout -enddate | sed 's/notAfter=//' | sed 's/GMT//')"
+EXP_DATE="$(echo | openssl s_client -connect $URL:443 -servername $URL 2>/dev/null | openssl x509 -noout -enddate | sed 's/notAfter=//' | sed 's/GMT//')"
 #Converting to seconds before using it
 EXP_DATE_IN_SEC="$(date -d "$EXP_DATE" +%s)"
 
